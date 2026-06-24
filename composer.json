@@ -1,0 +1,38 @@
+{
+  "name": "panelis-php/webhook",
+  "description": "Generic webhook manager for Panelis CMS.",
+  "keywords": ["webhook", "panelis", "php", "laravel", "filament"],
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "php": "^8.3",
+    "illuminate/http": "^13.0",
+    "illuminate/routing": "^13.0",
+    "illuminate/support": "^13.0",
+    "filament/filament": "^5.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.29"
+  },
+  "autoload": {
+    "psr-4": {
+      "Panelis\\Webhook\\": "src/",
+      "Panelis\\Webhook\\Factories\\": "database/factories/",
+      "Panelis\\Webhook\\Seeders\\": "database/seeders/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Panelis\\Webhook\\Providers\\WebhookServiceProvider"
+      ]
+    },
+    "panelis": {
+      "plugins": [
+        "Panelis\\Webhook\\Plugins\\WebhookPlugin"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
