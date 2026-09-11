@@ -47,7 +47,7 @@ class WebhookController extends Controller
                 LogWebhookJob::dispatch(new WebhookData(
                     vendor: $vendor,
                     status: $exception ? WebhookStatus::Failed : WebhookStatus::Success,
-                    exception: $exception,
+                    exception: $exception?->getMessage(),
                     payload: $request->all(),
                     metadata: [],
                 ));
